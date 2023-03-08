@@ -9,7 +9,29 @@ Spring Boot BeanUtils 예제이며 Dto에서 Entity 변환은 BeanUtils를 사�
 
 * spring-boot 3.0.2
 
-## 3. API 실행
+## 3. DTO ↔ Entity
+BeanUtils를 이용하여 DTO ↔ Entity 변환
+
+```java
+// dto to entity
+public Example(ExampleDto exampleDto) {
+    BeanUtils.copyProperties(exampleDto, this);
+}
+
+// entity to dto
+public ExampleDto toDto() {
+    ExampleDto exampleDto = new ExampleDto();
+    BeanUtils.copyProperties(this, exampleDto);
+    return exampleDto;
+}
+
+// entitys to dtos
+public static List<ExampleDto> toDtos(Iterable<Example> examples) {
+    return StreamSupport.stream(examples.spliterator(), false).map((Example::toDto)).collect(Collectors.toList());
+}
+```
+
+## 4. API 실행
 
 ### 1) 전체 조회
 
