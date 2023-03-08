@@ -9,8 +9,8 @@ Spring Boot BeanUtils 예제이며 Dto에서 Entity 변환은 BeanUtils를 사�
 
 * spring-boot 3.0.2
 
-## 3. DTO ↔ Entity
-BeanUtils를 이용하여 DTO ↔ Entity 변환
+## 3. DTO ↔️ Entity 변환
+BeanUtils를 이용하여 DTO ↔️ Entity 변환
 
 ```java
 // dto to entity
